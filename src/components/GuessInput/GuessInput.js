@@ -1,6 +1,6 @@
 import React from "react";
 
-function Guess({ addGuess }) {
+function Guess({ addGuess, disabled }) {
   const [label, setLabel] = React.useState("");
 
   function handleSubmit(event) {
@@ -21,6 +21,7 @@ function Guess({ addGuess }) {
         onChange={(e) => setLabel(e.target.value.toUpperCase())}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
+        disabled={disabled}
       />
     </form>
   );
